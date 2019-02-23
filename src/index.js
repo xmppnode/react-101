@@ -3,22 +3,17 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-const App = () => {
-  //const element = <h1>Hello, CodeSandbox</h1>;
-
-  function formatName(user) {
-    return user.firstName + " " + user.lastName;
-  }
-
-  const user = {
-    firstName: "Harper",
-    lastName: "Perez"
-  };
-
-  const element = <h1>Hello, {formatName(user)}!</h1>;
+function Welcome(props) {
+  return (
+    <h1>
+      Hello, {props.firstName} {props.lastName}!
+    </h1>
+  );
+}
+const App = props => {
   return (
     <div className="App">
-      {element}
+      <Welcome firstName="XMPP" lastName="Node" />
       <h2>Currently using React {React.version}</h2>
     </div>
   );
