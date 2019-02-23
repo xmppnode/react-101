@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function App() {
+const App = () => {
   //const element = <h1>Hello, CodeSandbox</h1>;
+
   function formatName(user) {
     return user.firstName + " " + user.lastName;
   }
@@ -21,7 +22,15 @@ function App() {
       <h2>Currently using React {React.version}</h2>
     </div>
   );
+};
+function Tick() {
+  const element2 = (
+    <div className="Tick">
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(element2, document.getElementById("root2"));
 }
-
+setInterval(Tick, 1000);
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
